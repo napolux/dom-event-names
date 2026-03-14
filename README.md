@@ -1,8 +1,18 @@
 # @napolux/dom-event-names
 
-TypeScript constants for DOM event names — eliminate magic strings from your event listeners.
+TypeScript constants for DOM event names - eliminate magic strings from your event listeners.
 
 Every constant carries an exact string literal type (e.g. `"mousedown"`, not `string`), so it works with `addEventListener` without any cast.
+
+## Why?
+
+```ts
+// Magic strings are error-prone and hard to refactor
+element.addEventListener("mosuedown", handler); // typo, no error
+
+// Constants are autocompleted and type-checked
+element.addEventListener(MOUSE_DOWN, handler); // safe
+```
 
 ## Installation
 
@@ -29,7 +39,7 @@ function handleClick(e: MouseEvent) {
 
 button.addEventListener(CLICK, handleClick);
 
-// later…
+// later...
 button.removeEventListener(CLICK, handleClick);
 ```
 
@@ -56,6 +66,28 @@ function on(el: HTMLElement, event: DOMEventName, handler: EventListener) {
   el.addEventListener(event, handler);
 }
 ```
+
+## Available Events
+
+| Category               | Constants                                                                                                                             |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Mouse                  | `CLICK`, `DBL_CLICK`, `MOUSE_DOWN`, `MOUSE_UP`, `MOUSE_MOVE`, `MOUSE_ENTER`, `MOUSE_LEAVE`, `MOUSE_OVER`, `MOUSE_OUT`, `CONTEXT_MENU` |
+| Keyboard               | `KEY_DOWN`, `KEY_UP`, `KEY_PRESS`                                                                                                     |
+| Form                   | `SUBMIT`, `CHANGE`, `INPUT`, `FOCUS`, `BLUR`, `RESET`, `SELECT`                                                                       |
+| Drag                   | `DRAG_START`, `DRAG`, `DRAG_END`, `DRAG_OVER`, `DRAG_ENTER`, `DRAG_LEAVE`, `DROP`                                                     |
+| Touch                  | `TOUCH_START`, `TOUCH_END`, `TOUCH_MOVE`, `TOUCH_CANCEL`                                                                              |
+| Window & Document      | `LOAD`, `UNLOAD`, `RESIZE`, `SCROLL`, `HASH_CHANGE`, `POP_STATE`, `VISIBILITY_CHANGE`                                                 |
+| Media                  | `PLAY`, `PAUSE`, `ENDED`, `VOLUME_CHANGE`, `TIME_UPDATE`, `CAN_PLAY`, `CAN_PLAY_THROUGH`                                              |
+| Clipboard              | `COPY`, `CUT`, `PASTE`                                                                                                                |
+| Animation & Transition | `ANIMATION_START`, `ANIMATION_END`, `ANIMATION_ITERATION`, `TRANSITION_END`                                                           |
+| Pointer                | `POINTER_DOWN`, `POINTER_UP`, `POINTER_MOVE`, `POINTER_ENTER`, `POINTER_LEAVE`, `POINTER_CANCEL`                                      |
+
+## Works everywhere
+
+- **TypeScript** - full literal types, autocomplete, and type safety
+- **JavaScript (ESM)** - `import { CLICK } from "@napolux/dom-event-names"`
+- **JavaScript (CJS)** - `const { CLICK } = require("@napolux/dom-event-names")`
+- **Node.js** - works out of the box, CJS and ESM
 
 ## Contributing
 

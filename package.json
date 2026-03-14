@@ -1,6 +1,6 @@
 {
   "name": "@napolux/dom-event-names",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "TypeScript constants for DOM event names — eliminate magic strings from your event listeners",
   "license": "MIT",
   "main": "dist/index.js",
