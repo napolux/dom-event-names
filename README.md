@@ -57,6 +57,10 @@ function on(el: HTMLElement, event: DOMEventName, handler: EventListener) {
 }
 ```
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines. This project enforces [Conventional Commits](https://www.conventionalcommits.org/) via husky + commitlint.
+
 ## License
 
 MIT

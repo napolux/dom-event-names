@@ -31,9 +31,32 @@ npm run clean
 - Add the constant to the `DOMEvents` object
 - Place it in the correct category section
 
+## Commit Convention
+
+This project uses [Conventional Commits](https://www.conventionalcommits.org/) enforced by [commitlint](https://commitlint.js.org/) and [husky](https://typicode.github.io/husky/).
+
+Commit messages must follow this format:
+
+```
+type(optional scope): description
+```
+
+Allowed types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`.
+
+Examples:
+
+```
+feat: add wheel event constants
+fix: correct TRANSITION_END value
+docs: update usage examples
+chore: bump dependencies
+```
+
+A pre-commit hook runs [lint-staged](https://github.com/lint-staged/lint-staged) to auto-format staged files with Prettier.
+
 ## Submitting Changes
 
-1. Commit your changes with a clear message
+1. Commit your changes following the conventional commit format above
 2. Push to your fork
 3. Open a pull request against `main`
 4. Describe what you changed and why
