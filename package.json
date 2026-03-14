@@ -1,0 +1,46 @@
+{
+  "name": "@napolux/dom-event-names",
+  "version": "0.1.0",
+  "description": "TypeScript constants for DOM event names — eliminate magic strings from your event listeners",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.esm.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "dom",
+    "events",
+    "event-names",
+    "typescript",
+    "constants",
+    "addEventListener"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/napolux/dom-event-names"
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  }
+}
