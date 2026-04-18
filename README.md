@@ -81,6 +81,7 @@ function on(el: HTMLElement, event: DOMEventName, handler: EventListener) {
 | Clipboard              | `COPY`, `CUT`, `PASTE`                                                                                                                |
 | Animation & Transition | `ANIMATION_START`, `ANIMATION_END`, `ANIMATION_ITERATION`, `TRANSITION_END`                                                           |
 | Pointer                | `POINTER_DOWN`, `POINTER_UP`, `POINTER_MOVE`, `POINTER_ENTER`, `POINTER_LEAVE`, `POINTER_CANCEL`                                      |
+| Wheel                  | `WHEEL`, `MOUSE_WHEEL`                                                                                                                |
 
 ## Works everywhere
 

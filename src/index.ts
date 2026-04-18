@@ -153,6 +153,15 @@ export const ANIMATION_ITERATION = "animationiteration" as const;
 export const TRANSITION_END = "transitionend" as const;
 
 //
+// Wheel Events
+//
+
+/** @constant {string} Fired when the user rotates a wheel button on a pointing device (typically a mouse). */
+export const WHEEL = "wheel" as const;
+/** @constant {string} Fired when a mouse wheel is rotated. @deprecated Use WHEEL instead. */
+export const MOUSE_WHEEL = "mousewheel" as const;
+
+//
 // Pointer Events
 //
 
@@ -250,6 +259,9 @@ export const DOMEvents = {
   POINTER_ENTER,
   POINTER_LEAVE,
   POINTER_CANCEL,
+
+  WHEEL,
+  MOUSE_WHEEL,
 } as const;
 
 /**
